@@ -1,0 +1,4 @@
+C:\Users\tanya\source\repos\invoiceFrontEndVue\invoiceFrontEndVue\obj\Debug\invoicefrontendvue.esproj.SuggestedBindingRedirects.cache
+C:\Users\tanya\source\repos\invoiceFrontEndVue\invoiceFrontEndVue\obj\Debug\invoicefrontendvue.esproj.CoreCompileInputs.cache
+C:\Users\tanya\source\repos\invoiceApp2ASPVue\invoiceFrontEndVue\obj\Debug\invoicefrontendvue.esproj.SuggestedBindingRedirects.cache
+C:\Users\tanya\source\repos\invoiceApp2ASPVue\invoiceFrontEndVue\obj\Debug\invoicefrontendvue.esproj.CoreCompileInputs.cache
