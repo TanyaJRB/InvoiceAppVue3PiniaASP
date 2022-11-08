@@ -125,13 +125,15 @@ import { defineComponent } from "vue";
 //import router from "@/router";
 import { useUserStore } from "@/stores/UserStore";
 //import UserApiService from "@/services/UserApiService";
+import { Api } from "@/api/Api";
+import { User } from "@/api/data-contracts";
 
 
 export default defineComponent({
   //props: ['id'],
   data() {
     return {
-      allUsers: [],
+      allUsers: new Array<User>(),
       user: useUserStore().user,
       userId: 0,
       submissionSuccess: null,
@@ -142,9 +144,23 @@ export default defineComponent({
     };
   },
   created() {
-    this.fetchUsers();
+    this.getUsersListNewApi();
+    //this.fetchUsers();
   },
   methods: {
+    getUsersListNewApi(): void {
+      const api = new Api();
+      try {
+        const users = api.usersList();
+        users
+        .then((r)=> r.data)
+        .then((data) => {
+          this.allUsers = data;
+          return;})
+      } catch {(error: Error) => {
+        console.log(error.message);
+      }}
+    },
     fetchUsers(): void {
       this.allUsers = [];
       this.loading = true;

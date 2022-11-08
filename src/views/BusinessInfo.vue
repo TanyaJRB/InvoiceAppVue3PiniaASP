@@ -151,7 +151,7 @@ import { BusinessDto } from "@/api";
 // import { defineComponent } from "vue";
 // import { ClientDto, BusinessDto } from "@/api";
 import { useUserStore } from "../stores/UserStore";
-import { onBeforeMount } from "vue-demi";
+import { onBeforeMount } from "vue";
 
 export default {
   setup() {

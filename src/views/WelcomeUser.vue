@@ -7,8 +7,7 @@
 <script lang="ts">
 import { UserDto } from "@/api";
 import { useUserStore } from "../stores/UserStore";
-import { onBeforeMount } from "vue-demi";
-import { ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 //import { onServerPrefetch } from "vue";
 
 export default {
