@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue'
 import UserForm from '../components/UserForm.vue'
 import HelloWorld from '../components/HelloWorld.vue'
 import BusinessInfo from '../views/BusinessInfo.vue'
+import WelcomeUser from '../views/WelcomeUser.vue'
 
 const routes = [
   {
@@ -16,7 +17,7 @@ const routes = [
     component: UserForm
   },
   {
-    path: '/businessinfo/:userId',
+    path: '/businessinfo/',
     name: 'BusinessInfo',
     component: BusinessInfo
   },
@@ -24,7 +25,12 @@ const routes = [
     path: '/helloworld',
     name: 'HelloWorld',
     component: HelloWorld
-  }
+  },
+  {
+    path: '/welcomeuser',
+    name: 'WelcomeUser',
+    component: WelcomeUser
+  },
 ]
 
 const router = createRouter({

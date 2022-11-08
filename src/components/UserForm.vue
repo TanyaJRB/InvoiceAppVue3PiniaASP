@@ -122,8 +122,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { UserDto } from "@/api";
-import router from "@/router";
+//import router from "@/router";
+import { useUserStore } from "@/stores/UserStore";
+//import UserApiService from "@/services/UserApiService";
 
 
 export default defineComponent({
@@ -131,7 +132,7 @@ export default defineComponent({
   data() {
     return {
       allUsers: [],
-      user: new UserDto(),
+      user: useUserStore().user,
       userId: 0,
       submissionSuccess: null,
       loading: false,
@@ -155,24 +156,9 @@ export default defineComponent({
           return;
         });
     },
-    addUserToDatabase() {
-      console.log(this.user);
-      fetch("/api/Users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(this.user),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          this.userId = data.userId;
-          router.push({ name: 'BusinessInfo', params: {userId: data.userId}})
-        })
-        .catch((error) => {
-          console.log(error, error.message);
-        });
-    },
+    async addUserToDatabase() {
+      useUserStore().addUserToDatabase();
+    }
   },
 });
 </script>

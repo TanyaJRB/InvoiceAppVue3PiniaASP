@@ -1,4 +1,5 @@
 class UserDto {
+static UserId?: number
 static BankDetails?: BankDetailsDto[];
 static FirstName: string;
 static LastName: string;
@@ -20,6 +21,7 @@ static Businesses?: BusinessDto[];
         public TaxRate?: number,
         public NINumber?: string,
         public Businesses?: BusinessDto[],
+        public UserId?: number
         ) {}
 }
 
@@ -39,9 +41,14 @@ static OtherInfo?: any;
 }
 
 class BusinessDto {
+    static BusinessName: string;
+    static Clients?: ClientDto[];
+    static UserId: number;
     constructor(
         public BusinessName: string = '',
-        public Clients: ClientDto[] = [{ClientName: '', ClientAddress:'', ClientPhone: '', ClientEmail: '', ClientContact: ''}]
+        public UserId: number,
+        public Clients?: ClientDto[],
+        // public Clients: ClientDto[] = [{ClientName: '', ClientAddress:'', ClientPhone: '', ClientEmail: '', ClientContact: ''}]
     ){}   
 }
 
